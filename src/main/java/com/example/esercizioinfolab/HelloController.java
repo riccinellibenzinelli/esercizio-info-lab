@@ -24,19 +24,13 @@ public class HelloController {
 
     private Palestra palestra;
 
-    public void initialize() {
-        palestra = new Palestra();
-    }
 
     @FXML
     private void aggiungiAbbonamentoMensile() {
         String nome = nomeAbbonamento.getText();
         if (!nome.trim().isEmpty()) {
             palestra.aggiungiAbbonamento(new AbbonamentoMensile(nome));
-            aggiornaTextArea();
             nomeAbbonamento.clear();
-        } else {
-            mostraAvviso("Inserisci un nome valido.");
         }
     }
 
@@ -45,10 +39,7 @@ public class HelloController {
         String nome = nomeAbbonamento.getText();
         if (!nome.trim().isEmpty()) {
             palestra.aggiungiAbbonamento(new AbbonamentoAnnuale(nome));
-            aggiornaTextArea();
             nomeAbbonamento.clear();
-        } else {
-            mostraAvviso("Inserisci un nome valido.");
         }
     }
 }

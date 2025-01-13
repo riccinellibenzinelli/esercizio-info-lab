@@ -22,10 +22,14 @@ public class Palestra {
     }
 
     public String elencoAbbonamenti() {
-        StringBuilder sb = new StringBuilder();
+        String sb = "";
         for (Abbonamento abbonamento : abbonamenti) {
-            sb.append(abbonamento.getNome()).append(" - €").append(abbonamento.getCosto()).append("\n");
+            sb+= abbonamento.getNome() + " - €" + abbonamento.getCosto() + "\n";
         }
-        return sb.toString();
+        return sb;
+    }
+
+    public String toString() {
+        return elencoAbbonamenti();
     }
 }
